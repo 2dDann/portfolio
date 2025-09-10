@@ -1,0 +1,259 @@
+/* matdilisio-about.css
+   Purpose: recreate look & feel of matdilisio.com about page (hero, centered content, simple nav, footer)
+   Notes: swap --brand-img-url with your hero image or use inline <img> as needed.
+*/
+
+/* ---- Base / Reset ---- */
+:root{
+  --max-width: 920px;
+  --page-gutter: 22px;
+  --brand-accent: #111; /* dark text */
+  --muted: #6b6b6b;
+  --bg: #ffffff;
+  --surface: #fafafa;
+  --radius: 10px;
+  --heading-stack: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --serif: "Merriweather", Georgia, "Times New Roman", serif;
+  --line-height: 1.65;
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+
+html,body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--brand-accent);
+  font-family: var(--heading-stack);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: var(--line-height);
+}
+
+/* ---- Layout container ---- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px var(--page-gutter);
+}
+
+/* ---- Top nav ---- */
+.site-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px var(--page-gutter);
+  position: sticky;
+  top: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.site-brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.site-nav{
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-size: 15px;
+}
+
+.site-nav a{
+  text-decoration: none;
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.site-nav a:hover{
+  color: var(--brand-accent);
+  background: rgba(0,0,0,0.03);
+}
+
+/* ---- Hero / About header ---- */
+.about-hero{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+  margin: 28px 0;
+}
+
+/* hero image block */
+.about-hero .hero-media{
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(16,24,40,0.06);
+  background: var(--surface);
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* main heading */
+.page-title{
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+/* tagline / intro */
+.lead{
+  margin: 14px 0 0 0;
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 60ch;
+}
+
+/* ---- Main content column ---- */
+.content {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  background: transparent;
+}
+
+.content p{
+  margin: 0 0 18px 0;
+  color: #222;
+  font-size: 16.25px;
+}
+
+/* small callout / email button */
+.cta-row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top: 10px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: white;
+  color: var(--brand-accent);
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+}
+
+.small-muted{
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---- Social / sidebar-ish area (stack for mobile) ---- */
+.explore {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.explore a{
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.explore a:hover{
+  color: var(--brand-accent);
+}
+
+/* ---- Footer ---- */
+.site-footer{
+  margin-top: 44px;
+  padding: 28px var(--page-gutter);
+  border-top: 1px solid rgba(0,0,0,0.04);
+  color: var(--muted);
+  background: transparent;
+  font-size: 14px;
+}
+
+/* small screens adjustments */
+@media (max-width: 860px){
+  .page-title{
+    font-size: 32px;
+  }
+  .about-hero{
+    gap: 18px;
+  }
+  .container{
+    padding: 20px;
+  }
+}
+
+/* larger screens: two-column layout for hero + content */
+@media (min-width: 1024px){
+  .about-hero{
+    grid-template-columns: 1fr 420px;
+    align-items: start;
+  }
+
+  .hero-media{
+    min-height: 360px;
+  }
+
+  .content{
+    padding-right: 10px;
+  }
+}
+
+/* ---- Utility ---- */
+.center{
+  text-align: center;
+}
+
+.kicker{
+  display:inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.03);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* small accessible focus styles */
+a:focus,
+button:focus{
+  outline: 3px solid rgba(59,130,246,0.22);
+  outline-offset: 2px;
+}
+
+/* subtle image caption */
+.img-caption{
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 8px;
+}

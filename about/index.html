@@ -3,56 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #e74c3c;
-            border-bottom: 2px solid #e74c3c;
-            padding-bottom: 10px;
-        }
-        .nav {
-            margin-bottom: 20px;
-        }
-        .nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        .nav a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="/portfolio/style.css">
+    <title>About Me | Portfolio</title>
 </head>
+<header class="site-header container">
+    <a class="site-brand" href="/">Amal Danish Azman</a>
+    <nav class="site-nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/projects">Projects</a>        
+        <a href="/social">Social</a>
+        <a href="/contact">Contact</a>
+    </nav>
+</header>
 <body>
-    <div class="container">
-        <div class="nav">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/work">Work</a>
-            <a href="/social">Social</a>
-            <a href="/contact">Contact</a>
+    <section class="container about-hero">
+        <div>
+            <h1 class="page-title">About Me</h1>
+            <p class="lead">Mattia is a creative professional who developed a passion for photography...</p>
+            <div class="cta-row">
+                <a class="btn" href="mailto:hello@example.com">E-Mail</a>
+                <span class="small-muted">Connect</span>
+            </div>
+            <div class="content">
+                <p>Mattia began his journey in the digital space as a self-taught enthusiast...</p>
+                <!-- rest of paragraphs -->
+            </div>
         </div>
-        
-        <h1>About Me</h1>
-        <p>Hello! I'm a passionate developer who loves creating amazing web experiences.</p>
-        <p>This is my portfolio site where I showcase my projects and skills.</p>
-        <p>Feel free to explore my work and get in touch if you'd like to collaborate!</p>
-    </div>
+
+        <aside>
+            <div class="hero-media">
+                <img src="path/to/about-image.jpg" alt="About image" style="width:100%;height:100%;object-fit:cover;">
+            </div>
+            <div class="explore">
+                <a href="#">YouTube</a>
+                <a href="#">Instagram</a>
+                <a href="#">TikTok</a>
+            </div>
+        </aside>
+    </section>
 </body>
 </html>
