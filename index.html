@@ -3,33 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/portfolio/style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Home | Portfolio</title>
 </head>
-<header class="site-header container">
-    <a class="site-brand" href="/">Amal Danish Azman</a>
-    <nav class="site-nav">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>        
-        <a href="/social">Social</a>
-        <a href="/contact">Contact</a>
-    </nav>
-</header>
 <body>
+    <!-- Sidebar / Bottom Navbar -->
+    <aside class="site-sidebar" id="sidebar">
+        <a class="site-brand" href="/">Amal Danish Azman</a>
+        <nav class="site-nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/social">Social</a>
+            <a href="/contact">Contact</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle">☰</button>
+    </aside>
+
+    <!-- Main Content -->
     <div class="container">
         <h1>Portfolio Site - dnsvr.org</h1>
         <p>This is the portfolio site for dnsvr.org</p>
         <p class="status">✓ Successfully deployed!</p>
         <p>This page will be automatically updated when you push to GitHub.</p>
         <p>Testing Automated Deployment Part 7</p>
-        
-        <div class="nav">
-            <a href="/about">About Me</a>
-            <a href="/work">My Work</a>
-            <a href="/social">Social Links</a>
-            <a href="/contact">Contact</a>
-        </div>
     </div>
+
+    <footer class="site-footer container">
+        <p>© 2025 Amal Danish Azman</p>
+    </footer>
+
+    <!-- Small JS for sidebar toggle -->
+    <script src="/script.js">
+        const sidebar = document.getElementById("sidebar");
+        const navToggle = document.getElementById("navToggle");
+
+        navToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+        });
+    </script>
 </body>
 </html>
