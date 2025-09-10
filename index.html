@@ -26,6 +26,22 @@
             color: #27ae60;
             font-weight: bold;
         }
+        .nav {
+            margin: 20px 0;
+        }
+        .nav a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .nav a:hover {
+            background: #c0392b;
+        }
     </style>
 </head>
 <body>
@@ -34,8 +50,13 @@
         <p>This is the portfolio site for dnsvr.org</p>
         <p class="status">✓ Successfully deployed!</p>
         <p>This page will be automatically updated when you push to GitHub.</p>
-        <p>Testing the automated deployment</p>
-        <p>Testing the automated deployment, pt2</p>
+        
+        <div class="nav">
+            <a href="/about">About Me</a>
+            <a href="/work">My Work</a>
+            <a href="/social">Social Links</a>
+            <a href="/contact">Contact</a>
+        </div>
     </div>
 </body>
 </html>
