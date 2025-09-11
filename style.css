@@ -167,7 +167,7 @@ html,body{
   margin: 0;
   font-size: 40px;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.05em;
   font-weight: 700;
   color: var(--header);
 }
