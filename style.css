@@ -43,63 +43,69 @@ html,body{
 }
 
 /* ---- Sidebar Nav (desktop) ---- */
-.sidebar {
+.site-sidebar {
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  width: var(--nav-width);
-  background: #222;
-  color: var(--header);
+  width: 80px;
+  background: #181818;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  transition: width 0.35s cubic-bezier(0.68,-0.55,0.27,1.55); /* bounce */
-  overflow: hidden;
-  z-index: 1000;
-}
-
-.sidebar.collapsed {
-  width: var(--nav-collapsed);
-}
-
-.sidebar .nav-links {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 0 16px;
-}
-
-.sidebar .nav-links a {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 15px;
-  padding: 10px 14px;
-  border-radius: 8px;
-  transition: background 0.2s, color 0.2s;
-}
-
-.sidebar .nav-links a:hover {
-  background: rgba(255,255,255,0.1);
-  color: var(--header);
-}
-
-/* Sidebar toggle button */
-.sidebar-toggle {
-  position: absolute;
-  top: 16px;
-  right: -18px;
-  background: #333;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  padding-top: 32px;
+  z-index: 1000;
+  transition: width 0.3s;
+}
+
+.site-sidebar.collapsed {
+  width: 56px;
+}
+
+.site-brand {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 48px;
+  letter-spacing: 0.02em;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.site-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  align-items: center;
+}
+
+.site-nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 8px 0;
+  transition: color 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-nav a.active,
+.site-nav a:hover {
+  color: #fff;
+}
+
+.nav-toggle {
+  margin-top: auto;
+  margin-bottom: 24px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
   cursor: pointer;
-  border: 2px solid #444;
-  color: var(--header);
-  font-size: 18px;
 }
 
 /* ---- Bottom Nav (mobile) ---- */
@@ -201,7 +207,7 @@ html,body{
 
 /* ---- Responsive ---- */
 @media (max-width: 900px){
-  .sidebar {
+  .site-sidebar {
     display: none;
   }
   .bottom-nav {
