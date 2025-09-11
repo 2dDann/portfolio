@@ -1,16 +1,20 @@
+/* matdilisio-about.css
+   Purpose: recreate look & feel of matdilisio.com about page (hero, centered content, simple nav, footer)
+   Notes: swap --brand-img-url with your hero image or use inline <img> as needed.
+*/
+
 /* ---- Base / Reset ---- */
 :root{
   --max-width: 920px;
   --page-gutter: 22px;
-  --header: #f6f6f6;
-  --text: #858585;
-  --bg: #1e1d1d;
+  --brand-accent: #111; /* dark text */
+  --muted: #6b6b6b;
+  --bg: #ffffff;
+  --surface: #fafafa;
   --radius: 10px;
   --heading-stack: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --serif: "Merriweather", Georgia, "Times New Roman", serif;
   --line-height: 1.65;
-  --nav-width: 240px;
-  --nav-collapsed: 72px;
 }
 
 *,
@@ -24,7 +28,7 @@ html,body{
   margin: 0;
   padding: 0;
   background: var(--bg);
-  color: var(--text);
+  color: var(--brand-accent);
   font-family: var(--heading-stack);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,11 +41,10 @@ html,body{
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 32px var(--page-gutter);
-  transition: margin-left 0.3s ease;
 }
 
 /* ---- Sidebar Nav (desktop) ---- */
-.site-sidebar {
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
@@ -51,53 +54,39 @@ html,body{
   color: var(--header);
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  transition: width 0.35s cubic-bezier(0.68,-0.55,0.27,1.55);
+  transition: width 0.35s cubic-bezier(0.68,-0.55,0.27,1.55); /* bounce */
   overflow: hidden;
   z-index: 1000;
 }
 
-.site-sidebar.collapsed {
+.sidebar.collapsed {
   width: var(--nav-collapsed);
 }
 
-.site-sidebar.collapsing {
-  transition: width 0.35s cubic-bezier(0.68,-0.55,0.27,1.55);
-}
-
-.site-brand {
-  color: var(--header);
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  margin-bottom: 40px;
-  white-space: nowrap;
-}
-
-.site-nav {
-  margin-top: 20px;
+.sidebar .nav-links {
+  margin-top: 60px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 12px;
+  padding: 0 16px;
 }
 
-.site-nav a {
+.sidebar .nav-links a {
   color: var(--text);
   text-decoration: none;
   font-size: 15px;
   padding: 10px 14px;
   border-radius: 8px;
   transition: background 0.2s, color 0.2s;
-  white-space: nowrap;
 }
 
-.site-nav a:hover {
+.sidebar .nav-links a:hover {
   background: rgba(255,255,255,0.1);
   color: var(--header);
 }
 
 /* Sidebar toggle button */
-.nav-toggle {
+.sidebar-toggle {
   position: absolute;
   top: 16px;
   right: -18px;
@@ -123,29 +112,26 @@ html,body{
   left: 0;
   width: 100%;
   background: #222;
+  display: flex;
   justify-content: space-around;
   padding: 10px 0;
   border-top: 1px solid #333;
   z-index: 1000;
+
   transform: translateX(0);
   transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
 }
 
-.bottom-nav.hidden {
-  transform: translateX(-100%);
-}
-
-.bottom-nav a {
-  color: var(--text);
+.site-nav a{
   text-decoration: none;
-  font-size: 14px;
-  text-align: center;
-  flex: 1;
-  transition: color 0.2s;
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 8px;
 }
 
-.bottom-nav a:hover {
-  color: var(--header);
+.site-nav a:hover{
+  color: var(--brand-accent);
+  background: rgba(0,0,0,0.03);
 }
 
 /* ---- Hero / About header ---- */
@@ -157,10 +143,12 @@ html,body{
   margin: 28px 0;
 }
 
-.hero-media{
+.about-hero .hero-media{
   width: 100%;
   border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: 0 8px 28px rgba(16,24,40,0.06);
+  background: var(--surface);
   min-height: 240px;
   display: flex;
   align-items: center;
@@ -174,13 +162,12 @@ html,body{
   line-height: 1.05;
   letter-spacing: -0.02em;
   font-weight: 700;
-  color: var(--header);
 }
 
 /* tagline / intro */
 .lead{
   margin: 14px 0 0 0;
-  color: var(--text);
+  color: var(--muted);
   font-size: 17px;
   max-width: 60ch;
 }
@@ -229,7 +216,7 @@ html,body{
   color: var(--header);
 }
 
-/* ---- Main content ---- */
+/* ---- Main content column ---- */
 .content {
   margin-top: 10px;
   display: grid;
@@ -240,41 +227,93 @@ html,body{
 
 .content p{
   margin: 0 0 18px 0;
-  color: var(--text);
+  color: #222;
   font-size: 16.25px;
+}
+
+/* small callout / email button */
+.cta-row{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top: 10px;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: white;
+  color: var(--brand-accent);
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+}
+
+.small-muted{
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---- Social / sidebar-ish area (stack for mobile) ---- */
+.explore {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.explore a{
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.explore a:hover{
+  color: var(--brand-accent);
 }
 
 /* ---- Footer ---- */
 .site-footer{
   margin-top: 44px;
   padding: 28px var(--page-gutter);
-  border-top: 1px solid rgba(255,255,255,0.04);
-  color: var(--text);
+  border-top: 1px solid rgba(0,0,0,0.04);
+  color: var(--muted);
   background: transparent;
   font-size: 14px;
 }
 
 /* ---- Responsive ---- */
 @media (max-width: 900px){
-  .site-sidebar {
+  .sidebar {
     display: none;
   }
-  .bottom-nav {
-    display: flex;
+  .about-hero{
+    gap: 18px;
   }
-  .container {
-    margin-left: 0 !important;
+  .container{
+    padding: 20px;
   }
 }
 
+/* larger screens: two-column layout for hero + content */
 @media (min-width: 1024px){
   .about-hero{
     grid-template-columns: 1fr 420px;
     align-items: start;
   }
+
   .hero-media{
     min-height: 360px;
   }
+
   .content{
     padding-right: 10px;
   }

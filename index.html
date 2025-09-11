@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/portfolio/style.css">
     <title>Home | Portfolio</title>
 </head>
 <body>
@@ -17,32 +17,30 @@
             <a href="/social">Social</a>
             <a href="/contact">Contact</a>
         </nav>
-        <button class="nav-toggle" id="sidebarToggle">☰</button> <!-- Changed ID -->
+        <button class="nav-toggle" id="navToggle">☰</button>
     </aside>
 
-    <!-- Bottom Navigation (for mobile) - ADDED -->
-    <nav class="bottom-nav" id="bottomNav">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/projects">Projects</a>
-        <a href="/social">Social</a>
-        <a href="/contact">Contact</a>
-    </nav>
-
     <!-- Main Content -->
-    <main class="container" id="mainContent"> <!-- Added ID and proper semantic tag -->
+    <div class="container">
         <h1>Portfolio Site - dnsvr.org</h1>
         <p>This is the portfolio site for dnsvr.org</p>
         <p class="status">✓ Successfully deployed!</p>
         <p>This page will be automatically updated when you push to GitHub.</p>
         <p>Testing Automated Deployment Part 7</p>
-    </main>
+    </div>
 
     <footer class="site-footer container">
         <p>© 2025 Amal Danish Azman</p>
     </footer>
 
-    <!-- Only include external script, remove inline script -->
-    <script src="/script.js"></script>
+    <!-- Small JS for sidebar toggle -->
+    <script src="/script.js">
+        const sidebar = document.getElementById("sidebar");
+        const navToggle = document.getElementById("navToggle");
+
+        navToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+        });
+    </script>
 </body>
 </html>
