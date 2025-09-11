@@ -6,18 +6,31 @@
     <link rel="stylesheet" href="/style.css">
     <title>Socials | Portfolio</title>
 </head>
-<header class="site-header container">
-    <a class="site-brand" href="/">Amal Danish Azman</a>
-    <nav class="site-nav">
+<body>
+    <!-- Sidebar / Bottom Navbar -->
+    <aside class="site-sidebar" id="sidebar">
+        <a class="site-brand" href="/">Amal Danish Azman</a>
+        <nav class="site-nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/projects">Projects</a>
+            <a href="/social">Social</a>
+            <a href="/contact">Contact</a>
+        </nav>
+        <button class="nav-toggle" id="sidebarToggle">☰</button> <!-- Changed ID -->
+    </aside>
+
+    <!-- Bottom Navigation (for mobile) - ADDED -->
+    <nav class="bottom-nav" id="bottomNav">
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/projects">Projects</a>        
+        <a href="/projects">Projects</a>
         <a href="/social">Social</a>
         <a href="/contact">Contact</a>
     </nav>
-</header>
-<body>
-    <div class="container">
+
+    <!-- Main Content -->
+    <main class="container" id="mainContent">
         <h1>Connect With Me</h1>
         
         <a href="https://github.com/yourusername" class="social-link" target="_blank">
@@ -43,13 +56,6 @@
     </footer>
 
     <!-- Small JS for sidebar toggle -->
-    <script src="/script.js">
-        const sidebar = document.getElementById("sidebar");
-        const navToggle = document.getElementById("navToggle");
-
-        navToggle.addEventListener("click", () => {
-        sidebar.classList.toggle("collapsed");
-        });
-    </script>
+    <script src="/script.js"></script>
 </body>
 </html>
