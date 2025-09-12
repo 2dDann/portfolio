@@ -26,7 +26,7 @@ body{
   background-color: var(--bg-clr);
   color: var(--header-clr);
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 250px 1fr;
 }
 
 /* ---- Sidebar Nav ---- */
@@ -265,4 +265,8 @@ main p{
       }
     }
   }
+}
+
+body.sidebar-collapsed {
+  grid-template-columns: 60px 1fr;
 }

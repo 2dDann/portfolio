@@ -1,11 +1,9 @@
 const toggleButton = document.getElementById('toggle-btn')
-const sidebar = document.getElementById('sidebar')
 
-function toggleSidebar(){
-  sidebar.classList.toggle('close')
-  toggleButton.classList.toggle('rotate')
-
-  closeAllSubMenus()
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.classList.toggle('close');
+  document.body.classList.toggle('sidebar-collapsed');
 }
 
 function toggleSubMenu(button){
