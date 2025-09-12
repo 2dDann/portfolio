@@ -132,7 +132,7 @@ body{
   padding-left: 2em;
 }
 
-#toggle-btn{
+#toggle-btn, #btn{
   margin-left: auto;
   padding: 1em;
   border: none;
@@ -145,7 +145,7 @@ body{
   }
 }
 
-#toggle-btn:hover{
+#toggle-btn:hover, #btn:hover{
   background-color: var(--hover-clr);
 }
 
@@ -166,7 +166,7 @@ main p{
   margin-bottom: 20px;
   padding: min(3em, 15%);
 
-  h2, p { margin-top: 1em }
+  h1, h2, p { margin-top: 1em }
 }
 
 /* ---- Footer ---- */

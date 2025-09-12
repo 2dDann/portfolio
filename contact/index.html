@@ -50,34 +50,35 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container">
-        <h1>Contact Me</h1>
-        
-        <div class="contact-info">
-            <div><strong>Email:</strong> your.email@example.com</div>
-            <div><strong>Location:</strong> Your City, Country</div>
-            <div><strong>Availability:</strong> Available for freelance projects</div>
+    <main>
+        <div class="container">
+            <h1>Contact Me</h1>
+            
+            <div class="contact-info">
+                <div><strong>Email:</strong> your.email@example.com</div>
+                <div><strong>Location:</strong> Your City, Country</div>
+                <div><strong>Availability:</strong> Available for freelance projects</div>
+            </div>
+            
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+            
+            <p id="form-status" style="display: none; color: green; font-weight: bold;">
+                Thank you for your message! I'll get back to you soon.
+            </p>
         </div>
-        
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
-        
-        <p id="form-status" style="display: none; color: green; font-weight: bold;">
-            Thank you for your message! I'll get back to you soon.
-        </p>
-    </div>
-
-
+    </main>
+    
     <footer class="site-footer container">
         <p>© 2025 Amal Danish Azman</p>
     </footer>
