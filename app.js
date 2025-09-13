@@ -1,9 +1,12 @@
 const toggleButton = document.getElementById('toggle-btn')
+const sidebar = document.getElementById('sidebar');
 
 function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  sidebar.classList.toggle('close');
+  const collapsed = sidebar.classList.toggle('close');
   document.body.classList.toggle('sidebar-collapsed');
+  toggleButton.classList.toggle('rotated');
+  
+  localStorage.setItem('sidebar-collapsed', collapsed ? 'yes' : 'no');
 }
 
 function toggleSubMenu(button){
@@ -27,3 +30,14 @@ function closeAllSubMenus(){
     ul.previousElementSibling.classList.remove('rotate')
   })
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.getElementById('sidebar');
+  const toggleBtn = document.getElementById('toggle-btn');
+  if (localStorage.getItem('sidebar-collapsed') === 'yes') {
+    sidebar.classList.add('close');
+    document.body.classList.add('sidebar-collapsed');
+    toggleBtn.classList.add('rotated');
+  }
+});
+
