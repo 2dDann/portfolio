@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/portfolio/style.css">
     <script type="text/javascript" src="/app.js" defer></script>
+    <script type="text/javascript" src="/portfolio/app.js" defer></script>
     <title>Contact | Portfolio</title>
 </head>
 <body>
@@ -53,35 +55,42 @@
     <!-- Main Content -->
     <main>
         <div class="container">
-            <h1>Contact Me</h1>
+            <h1>Contact</h1>
             
-            <div class="contact-info">
-                <div><strong>Email:</strong> your.email@example.com</div>
-                <div><strong>Location:</strong> Your City, Country</div>
-                <div><strong>Availability:</strong> Available for freelance projects</div>
+            <p>I’m always looking to collaborate on interesting projects with great people. For business inquiries please send an email to "mat@matdilisio.com" or copy it by clicking the button below.</p>
+
+            <div>
+                <button onclick="location.href='mailto:280danish@gmail.com';" class="button" style="margin-right: 1em;">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>
+                <span>Send an email</span>
+                </button>
+
+                <button onclick="copyEmail()" class="button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>
+                <span id="emailCopyText">Copy Email</span>
+                </button>
             </div>
             
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">Send Message</button>
-            </form>
-            
-            <p id="form-status" style="display: none; color: green; font-weight: bold;">
-                Thank you for your message! I'll get back to you soon.
-            </p>
         </div>
     </main>
     
     <footer class="site-footer container">
         <p>© 2025 Amal Danish Azman</p>
     </footer>
+
+    <script>
+        function copyEmail(){
+        const myEmail = '280danish@gmail.com';
+        const emailSpan = document.getElementById("emailCopyText");
+        navigator.clipboard.writeText(myEmail);
+        let timeoutId;
+
+        emailSpan.innerHTML = "Copied";
+
+        timeoutId = setTimeout(() => {
+            emailSpan.innerHTML = "Copy Email";
+        },3000);
+        }
+    </script>
 </body>
 </html>
