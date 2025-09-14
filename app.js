@@ -6,6 +6,7 @@ function toggleSidebar() {
   document.body.classList.toggle('sidebar-collapsed');
   toggleButton.classList.toggle('rotated');
   
+  closeAllSubMenus()
   localStorage.setItem('sidebar-collapsed', collapsed ? 'yes' : 'no');
 }
 
